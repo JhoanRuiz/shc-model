@@ -1,0 +1,18 @@
+{
+    "MyInstance" :{
+        "object_owner": {
+            "global_roles": [
+                {
+                    "roles": ["genericRoleFor00"]
+                }
+            ]
+        },
+        "application_user": {
+            "global_roles": [
+                {
+                    "roles": ["genericRoleForAP"]
+                }
+            ]
+        }
+    }
+}

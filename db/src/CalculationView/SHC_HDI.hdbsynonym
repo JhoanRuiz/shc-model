@@ -1,0 +1,14 @@
+{
+  "com.sap::SCARR": {
+    "target": {
+      "object": "SCARR",
+      "schema": "SFLIGHT"
+    }
+  },
+  "com.sap::SPFLI": {
+    "target": {
+      "object": "SPFLI",
+      "schema": "SFLIGHT"
+    }
+  }
+}
