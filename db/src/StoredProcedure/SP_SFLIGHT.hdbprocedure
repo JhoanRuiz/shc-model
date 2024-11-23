@@ -1,0 +1,17 @@
+PROCEDURE "SP_SFLIGHT"( IN P_ID NVARCHAR(3),
+                       OUT SAIRPOR TABLE( ID NVARCHAR(3), NAME NVARCHAR(200)) )
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA SFLIGHT
+   --READS SQL DATA 
+   AS
+BEGIN
+   /*************************************
+       Write your procedure logic
+   *************************************/
+   SAIRPOR = SELECT ID, NAME
+              FROM "com.sap::SAIRPORT"
+             WHERE ID = :P_ID ;
+
+
+END
