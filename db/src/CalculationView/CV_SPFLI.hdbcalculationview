@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SPFLI" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_SPFLI.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="com.sap::SPFLI">
+    <resourceUri>com.sap::SPFLI</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SPFLI">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="CARRID"/>
+      <viewAttribute id="CONNID"/>
+      <viewAttribute id="COUNTRYFR"/>
+      <viewAttribute id="CITYFROM"/>
+      <viewAttribute id="AIRPFROM"/>
+      <viewAttribute id="COUNTRYTO"/>
+      <viewAttribute id="CITYTO"/>
+      <viewAttribute id="AIRPTO"/>
+      <viewAttribute id="FLTIME"/>
+      <viewAttribute id="DEPTIME"/>
+      <viewAttribute id="ARRTIME"/>
+      <viewAttribute id="DISTANCE"/>
+      <viewAttribute id="DISTID"/>
+      <viewAttribute id="FLTYPE"/>
+      <viewAttribute id="PERIOD"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="com.sap::SPFLI"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_SPFLI">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="CARRID"/>
+      <viewAttribute id="CONNID"/>
+      <viewAttribute id="COUNTRYFR"/>
+      <viewAttribute id="CITYFROM"/>
+      <viewAttribute id="AIRPFROM"/>
+      <viewAttribute id="COUNTRYTO"/>
+      <viewAttribute id="CITYTO"/>
+      <viewAttribute id="AIRPTO"/>
+      <viewAttribute id="FLTIME" aggregationType="sum"/>
+      <viewAttribute id="DEPTIME"/>
+      <viewAttribute id="ARRTIME"/>
+      <viewAttribute id="DISTANCE" aggregationType="sum"/>
+      <viewAttribute id="DISTID"/>
+      <viewAttribute id="FLTYPE"/>
+      <viewAttribute id="PERIOD" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SPFLI">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CARRID" source="CARRID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CONNID" source="CONNID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRYFR" source="COUNTRYFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITYFROM" source="CITYFROM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AIRPFROM" source="AIRPFROM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRYTO" source="COUNTRYTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITYTO" source="CITYTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AIRPTO" source="AIRPTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLTIME" source="FLTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPTIME" source="DEPTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARRTIME" source="ARRTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISTANCE" source="DISTANCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISTID" source="DISTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLTYPE" source="FLTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIOD" source="PERIOD"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="U_SPFLI">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="MANDT"/>
+    </attribute>
+    <attribute id="CARRID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CARRID"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="CARRID"/>
+    </attribute>
+    <attribute id="CONNID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONNID"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="CONNID"/>
+    </attribute>
+    <attribute id="COUNTRYFR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRYFR"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="COUNTRYFR"/>
+    </attribute>
+    <attribute id="CITYFROM" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CITYFROM"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="CITYFROM"/>
+    </attribute>
+    <attribute id="AIRPFROM" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AIRPFROM"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="AIRPFROM"/>
+    </attribute>
+    <attribute id="COUNTRYTO" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRYTO"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="COUNTRYTO"/>
+    </attribute>
+    <attribute id="CITYTO" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CITYTO"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="CITYTO"/>
+    </attribute>
+    <attribute id="AIRPTO" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AIRPTO"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="AIRPTO"/>
+    </attribute>
+    <attribute id="DEPTIME" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DEPTIME"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="DEPTIME"/>
+    </attribute>
+    <attribute id="ARRTIME" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARRTIME"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="ARRTIME"/>
+    </attribute>
+    <attribute id="DISTID" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DISTID"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="DISTID"/>
+    </attribute>
+    <attribute id="FLTYPE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FLTYPE"/>
+      <keyMapping columnObjectName="U_SPFLI" columnName="FLTYPE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="FLTIME" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FLTIME"/>
+      <measureMapping columnObjectName="U_SPFLI" columnName="FLTIME"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="DISTANCE" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="DISTANCE"/>
+      <measureMapping columnObjectName="U_SPFLI" columnName="DISTANCE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="PERIOD" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PERIOD"/>
+      <measureMapping columnObjectName="U_SPFLI" columnName="PERIOD"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_SPFLI" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="322"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_SPFLI" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
