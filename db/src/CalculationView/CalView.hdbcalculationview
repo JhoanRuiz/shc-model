@@ -172,11 +172,11 @@
     </shape>
     <shape modelObjectName="com.sap::SCARR" modelObjectNameSpace="J_SCARR_SPFLI" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="39" y="30"/>
-      <rectangleSize width="163.345703125"/>
+      <rectangleSize width="163"/>
     </shape>
     <shape modelObjectName="com.sap::SPFLI" modelObjectNameSpace="J_SCARR_SPFLI" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="155.265625"/>
+      <rectangleSize width="155"/>
     </shape>
   </shapes>
 </layout>
