@@ -16,5 +16,11 @@
       "object": "SAIRPORT",
       "schema": "SFLIGHT"
     }
+  },
+  "com.sap::SBOOK": {
+    "target": {
+      "object": "SBOOK",
+      "schema": "SFLIGHT"
+    }
   }
 }
