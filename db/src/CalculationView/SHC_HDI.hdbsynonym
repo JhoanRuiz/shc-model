@@ -22,5 +22,11 @@
       "object": "SBOOK",
       "schema": "SFLIGHT"
     }
+  },
+  "com.sap::SAPLANE": {
+    "target": {
+      "object": "SAPLANE",
+      "schema": "SFLIGHT"
+    }
   }
 }
